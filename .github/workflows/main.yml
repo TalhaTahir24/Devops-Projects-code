@@ -1,0 +1,17 @@
+name: Copy REPO to src folder
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  copy_repo:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy repo to src folder
+        run: |
+          cp -r * /home/talha/project/cv1/src
